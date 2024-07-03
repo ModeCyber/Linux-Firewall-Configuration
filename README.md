@@ -1,9 +1,35 @@
+# Linux Firewall Configuration
+
+## Introduction
+
+This repository contains detailed instructions for configuring firewall rules in CentOS and retrieving firewall profile configurations. 
+These configurations are essential for ensuring secure and efficient remote access and managing network security policies.
+
+### 1. Display the IP Address on SecurityCS1-CentOS7-B
+
+1. **Open Terminal on SecurityCS1-CentOS7-B:**
+   - You can do this by accessing the console or SSH into the machine if it's already set up for remote access.
+
+2. **Check IP Address:**
+   ```bash
+   ip addr show eth0
+   
+3. **Attempt to connect via Telnet:**
+   ```bash
+   telnet 192.168.1.101 (Ip address is an example
+
+You will likely receive the error telnet: connect to address 192.168.1.101: No route to host because the firewall on CentOS7-B does not permit inbound Telnet connections on port 23.
+
+### 2. Create a Firewall Exception on SecurityCS1-CentOS7-B
+1. **Open Terminal on SecurityCS1-CentOS7-B:**
+   - Add Firewall Rule for Telnet (port 23):
+  sudo firewall-cmd --zone=public --add-port=23/tcp --permanent
+
 # Firewalld-commands
 
 This repository contains useful commands for managing `firewalld` on a Linux system. 
 
-## Display the current Linux firewall rules
-
+### Display the current Linux firewall rules
 
 ### Verify if the `firewalld` service is running
 
@@ -12,10 +38,14 @@ To verify that the `firewalld` service is running, use the following command:
 ```bash
 systemctl status firewalld
 
+### 3. Re-establish Telnet Connection from SecurityCS1-CentOS7-A
+Open Terminal on SecurityCS1-CentOS7-A:
+Connect via Telnet:
+   ```bash
+   telnet 192.168.1.101
+
 ## Display the current Linux firewall rules
-
 To display the current Linux firewall rules, use the following command:
-
 ```bash
 firewall-cmd --list-all
 
