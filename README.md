@@ -33,7 +33,7 @@ This repository contains useful commands for managing `firewalld` on a Linux sys
 
 ### Verify if the `firewalld` service is running
 
-To verify that the `firewalld` service is running, use the following command:
+## To verify that the `firewalld` service is running, use the following command:
 
 ```bash
 systemctl status firewalld
