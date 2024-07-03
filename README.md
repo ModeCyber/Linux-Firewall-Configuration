@@ -29,11 +29,11 @@ You will likely receive the error telnet: connect to address 192.168.1.101: No r
 
 This repository contains useful commands for managing `firewalld` on a Linux system. 
 
-### Display the current Linux firewall rules
+# Display the current Linux firewall rules
 
-### Verify if the `firewalld` service is running
+# Verify if the `firewalld` service is running
 
-## To verify that the `firewalld` service is running, use the following command:
+# To verify that the `firewalld` service is running, use the following command:
 
 ```bash
 systemctl status firewalld
